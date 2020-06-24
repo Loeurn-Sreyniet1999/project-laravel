@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('students/{id}','StudentController@detail')->name('detailStudent');
+
+
+
+
+// user
+
+Route::resource('user','UserController');
+
+// student 
+Route::resource('student','StudentController');
+
+
+// dashboard
+
